@@ -1,0 +1,85 @@
+My understanding of DevOps and Cloud Engineering?
+
+ - DevOps is a combination of Development(Dev) and Operations(Ops).It is a culture and set of practices that help teams to build, test and release software faster with more reliably and scalability.
+  Plan -> Devlop -> Build -> Test -> Release -> Deploy -> Operate -> Monitor -> Plan
+
+- Cloud engg is the technical specialization focused on building, managing and securing the scalable infrastructure and platforms(AWS, Azure, GCP)that host these Applikation.
+
+Why is DevOps used?
+ - Traditionally development and Operations teams works separately often led to
+   > Delays releases
+   > Manual errors
+   > Communication gaps
+   > Slow issue resolution
+
+ -> DevOps helps overcome these challenges through :
+   > Automation
+   > Continuous Integration and Continuous Delivery(CI/CD)
+   > Team collaboration.
+   > Faster deployments
+   > Improved software quality
+   > Better Monitoring and reliability
+
+I started learning DevOps & Cloud?
+ - As an automation engineer did not get chance to explore more on other tools.
+ - I want to build strong practical skills, gain hands-on experience, and become job-ready in DevOps and Cloud.
+ - I want to get AWS certification.
+  
+My End Goal
+- Become independent self learner to Troubleshoot problem
+- Become a skilled DevOps engineering
+- Get good job opportunity in cloud/DevOps
+- Continuous growth in IT Industry.
+
+
+My current level
+ - Currently working as Manual tester/Healthcare Domain/ Medical device testing/ Cyber security testing  / selenium/ Squish/ Core JAVA/ Core Python 
+
+
+My Goals for the next 90 days
+ - Complete Linux hands on from basics to advanced level.
+ - Learn Docker, terraform and Kubernetes fundamentals.
+ - Understand CI/CD pipelines and automation.
+ - Build real world DevOps project.
+ - Stay consistent and continuity with daily hands on practice.
+ 
+
+Core DevOps skills I want to build 
+ - Creating CI/CD Pipelines.
+ - AWS / Cloud fundamentals.
+ - Networking Basics
+ - Linux, Docker, K8s, Terraform
+
+My Weekly time budget
+ - weekly 3-3.5 hrs
+ - Weekend 5-6 hrs
+
+
+Final Note
+- This challenge is not only about learning tools for me — it is about rebuilding my career with consistency, continuity, speed and confidence. I am ready to learn every day and move one step closer to become a DevOps Engineer.
+- Want to come out of Manual testing and get job ready with skilled DevOps Engg.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

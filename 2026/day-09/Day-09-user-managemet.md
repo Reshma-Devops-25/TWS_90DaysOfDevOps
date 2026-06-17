@@ -94,29 +94,30 @@ Users & Groups Created
 
 Listed who is in which groups
 
-Group		User
-Developers	tokyo, berlin
-admins		berlin, professor
-project-team	nairobi, Tokyo
+Group	
+- Developers 	:-	tokyo, berlin
+- admins	:-	berlin, professor
+- project-team	:-	nairobi, Tokyo
 
 Listed directories with permissions
 
 Directories	Permissions
-team-workspace	drwxrwxr-x
-dev-project 	drwxrwxr-x
+
+- team-workspace :-	drwxrwxr-x
+- dev-project 	 :-	drwxrwxr-x
 
 Commands used
 
-mkdir -p "directoy_name"		-> Create directory
-touch "file_name			-> Create file
-sudo useradd -m "username"		-> Create User
-sudo passwd "username"			-> Set password
-cat /etc/passwd				-> Verify added users
-sudo groupadd "groupname"		-> Create group
-sudo gpasswd -a "username" "groupname"	-> Add user to group
-cat /ect/group 				-> Verify added group
-sudo chgrp "groupname" "directoy_name"	-> Change group ownership
-sudo chmod "permission" "directoy_name"	-> set permissions
+- mkdir -p "directoy_name"		-> Create directory
+- touch "file_name			-> Create file
+- sudo useradd -m "username"		-> Create User
+- sudo passwd "username"			-> Set password
+- cat /etc/passwd				-> Verify added users
+- sudo groupadd "groupname"		-> Create group
+- sudo gpasswd -a "username" "groupname"	-> Add user to group
+- cat /ect/group 				-> Verify added group
+- sudo chgrp "groupname" "directoy_name"	-> Change group ownership
+- sudo chmod "permission" "directoy_name"	-> set permissions
 
 
 

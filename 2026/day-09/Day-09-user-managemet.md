@@ -90,25 +90,28 @@ Commands:
 - sudo chmod 775 /opt/team-workspace/
 
 Users & Groups Created
+|---|---|
 | Users  | tokyo, berlin, professor, Nairobi |
 | Groups | developers, admins, project-team |
 
 Listed who is in which groups
 
-Group	
+| Group |
+|---|---|	
 | Developers 	|	tokyo, berlin |
 | admins	|	berlin, professor |
 | project-team	|	nairobi, Tokyo |
 
 Listed directories with permissions
 
-Directories	Permissions
-
+| Directories |	Permissions |
+|---|---|
 | team-workspace |	drwxrwxr-x |
 | dev-project 	 |	drwxrwxr-x |
 
 Commands used
-
+| Command |		Purpose |
+|---|---|
 | mkdir -p "directoy_name"	|	Create directory |
 | touch "file_name		|	Create file |
 | sudo useradd -m "username"	|	Create User |

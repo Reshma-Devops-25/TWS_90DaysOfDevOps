@@ -90,13 +90,16 @@ Commands:
 - sudo chmod 775 /opt/team-workspace/
 
 Users & Groups Created
+| Users | Groups |
 |---|---|
-| Users  | tokyo, berlin, professor, Nairobi |
-| Groups | developers, admins, project-team |
+| Tokyo | developers |
+| berlin | admins |
+| professor | project-team |
+| Nairobi  |    |
 
 Listed who is in which groups
 
-| Group |
+| Group | User |
 |---|---|	
 | Developers 	|	tokyo, berlin |
 | admins	|	berlin, professor |

@@ -39,11 +39,12 @@ For all files have read permission in common
 |---|
 | -rw-r--r-- |
 
-| Owner | Group | Others |
+---
+| Owner  | Group | Others |
 |---|---|
-| read	| write |   -	|
-| read  |   -   |   -   |
-| raed  |   -   |   -   |
+| read	| write |   	 |
+| read   |       |       |
+| raed   |       |       |
 ---
 
 ### Task 4: Modify Permissions
@@ -71,12 +72,13 @@ Verification: used `ls -l` after each change
 ['devops.txt', 'notes.txt', 'script.sh']
 
 ## Permission Changes
+---
 | File Name | Permission chnage before | Permission change After |
 |---|---|
 | devops.txt | -rw-r--r-- | -r--r--r--|
 | notes.txt  | -rw-r--r-- | -rw-r--r--|
 | devops.txt | -rw-r--r-- | -rw-r--r--|
-
+---
 ## Commands Used
 - Create file : 'touch', 'vim', 'echo'
 - Read file : 'cat', 'head -n', 'tail -n', 'vim -R'

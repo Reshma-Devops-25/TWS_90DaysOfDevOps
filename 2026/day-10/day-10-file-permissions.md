@@ -39,11 +39,12 @@ For all files have read permission in common
 |---|
 | -rw-r--r-- |
 
-Regular file (not a directory)
+```bash
+- → Regular file (not a directory)
 Owner (vinod): rw- → read ✅ write ✅ execute ❌
 Group (vinod): r-- → read ✅ write ❌ execute ❌
 Others        : r-- → read ✅ write ❌ execute ❌
-
+```
 ### Task 4: Modify Permissions
 
 1. Made `script.sh` executable → using command sudo chmod 744 script.sh -> ./script.sh
@@ -66,15 +67,18 @@ Verification: used `ls -l` after each change
 <img width="957" height="416" alt="image" src="https://github.com/user-attachments/assets/e6867ea6-4066-4b80-887e-aa6a07148c61" />
 
 ## Files Created
-['devops.txt', 'notes.txt', 'script.sh']
+- 'devops.txt'
+- 'notes.txt'
+- 'script.sh'
+<img width="536" height="120" alt="image" src="https://github.com/user-attachments/assets/5c365864-5b1c-435f-8e9c-9cc24a318e7d" />
 
 ## Permission Changes
----
-Regular file (not a directory)
+```bash
+- → Regular file (not a directory)
 Owner (vinod): rw- → read ✅ write ✅ execute ❌
 Group (vinod): r-- → read ✅ write ❌ execute ❌
 Others        : r-- → read ✅ write ❌ execute ❌
----
+```
 ## Commands Used
 - Create file : 'touch', 'vim', 'echo'
 - Read file : 'cat', 'head -n', 'tail -n', 'vim -R'

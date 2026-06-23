@@ -101,6 +101,106 @@ Using `chown` you can change both owner and group together:
 
 <img width="963" height="462" alt="task5 4" src="https://github.com/user-attachments/assets/443eab32-bcad-4a5a-9917-17f253e7d2b4" />
 
+### Task 6: Practice Challenge 
+
+1. Create users: `tokyo`, `berlin`, `nairobi`
+<img width="864" height="191" alt="task6 1" src="https://github.com/user-attachments/assets/27f24cdd-ff79-4c72-afae-5c05af9344b9" />
+
+2. Create groups: `vault-team`, `tech-team`
+<img width="807" height="196" alt="task6 2" src="https://github.com/user-attachments/assets/cec77144-531c-48eb-96d6-ac82c19a6739" />
+
+3. Create directory: `bank-heist/`
+<img width="589" height="168" alt="task6 3" src="https://github.com/user-attachments/assets/a5725555-2926-48c5-b3e7-27d67e4ee5ff" />
+
+4. Create 3 files inside:
+   ```
+   touch bank-heist/access-codes.txt
+   touch bank-heist/blueprints.pdf
+   touch bank-heist/escape-plan.txt
+   ```
+<img width="756" height="149" alt="task6 4" src="https://github.com/user-attachments/assets/518d74c6-d7b9-4e2a-afc6-c540d30472f6" />
+
+5. Set different ownership:
+   - `access-codes.txt` → owner: `tokyo`, group: `vault-team`
+   - `blueprints.pdf` → owner: `berlin`, group: `tech-team`
+   - `escape-plan.txt` → owner: `nairobi`, group: `vault-team`
+
+<img width="925" height="308" alt="task6 5" src="https://github.com/user-attachments/assets/01f09b1b-10d9-4a73-ba55-78ee3025d6f5" />
+
+**Verify:** `ls -l bank-heist/`
+
+<img width="696" height="257" alt="task6 5 1" src="https://github.com/user-attachments/assets/7da66e80-4a82-4126-83f9-a49978e609c5" />
+
+## Files & Directories Created
+- devops-file.txt
+- project-config.yaml
+- team-notes.txt
+- d app-logs/
+- d bank-heist/
+	- access-code.txt
+	- blueprint.pdf
+	- escape-plan.txt
+- d heist-project/
+	- d plans/
+		- gold.txt
+	- d vault/
+		- gold.txt
+ 
+## Ownership Changes
+
+| File/Dir                   | Before    | After                       |
+| -------------------------- | --------- | --------------------------- |
+| devops-file.txt            | user:user | tokyo:tokyo → berlin:berlin |
+| team-notes.txt             | user:user | user:heist-team             |
+| project-config.yaml        | user:user | professor:heist-team        |
+| app-logs/                  | user:user | berlin:heist-team           |
+| heist-project/ (all files) | user:user | professor:planners          |
+| access-codes.txt           | user:user | tokyo:vault-team            |
+| blueprints.txt             | user:user | berlin:tech-team            |
+| escape-plan.txt            | user:user | nairobi:vault-team          |
+
+
+## Commands Used
+```bash
+touch devops-file.txt
+ls -l
+sudo useradd tokyo
+sudo chown tokyo devops-file.txt
+sudo useradd berlin
+sudo chown berlin devops-file.txt
+touch team-notes.txt
+sudo groupadd heist-team
+sudo chgrp heist-team team-notes.txt
+touch project-config.yaml
+sudo chown professor:heist-team project-config.yaml
+mkdir app-logs
+sudo chown berlin:heist-team app-logs
+mkdir -p heist-project/vault
+mkdir -p heist-project/plans
+touch heist-project/vault/gold.txt
+touch heist-project/plans/strategy.conf
+sudo groupadd planners
+sudo chown -R professor:planners heist-project/
+mkdir bank-heist
+touch bank-heist/access-codes.txt
+touch bank-heist/blueprints.txt
+touch bank-heist/escape-plan.txt
+sudo useradd nairobi
+sudo groupadd vault-team
+sudo groupadd tech-team
+sudo chown tokyo:vault-team bank-heist/access-codes.txt
+sudo chown berlin:tech-team bank-heist/blueprints.txt
+sudo chown nairobi:vault-team bank-heist/escape-plan.txt
+ls -lR bank-heist/
+```
+
+## What I Learned
+1.**Owner** controls the file, and has specific rights (read/write/execute).
+
+2.**Group** allows multiple users to share permissions.
+
+3.**chown** changes owner; **chgrp** changes group; **chown** changes both owner and group in one command.
+
 
 
 

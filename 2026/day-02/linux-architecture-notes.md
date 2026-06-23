@@ -1,14 +1,14 @@
-**The core components of Linux (kernel, user space, init/systemd)**
+##The core components of Linux (kernel, user space, init/systemd)##
 
-Hardware: Physical devices like CPU, RAM, Disk and Network Devices.
+- Hardware: Physical devices like CPU, RAM, Disk and Network Devices.
 
-Kernel : Core of Linux that manages processes, memory, devices and system resources.
+- Kernel : Core of Linux that manages processes, memory, devices and system resources.
 
-User Space: Area where users and applications run.
+- User Space: Area where users and applications run.
 
-Shell: Command Line Interface used to interact with kernel.
+- Shell: Command Line Interface used to interact with kernel.
 
-Systemd: First process (PID 1) responsible for managing services and system startups.
+- Systemd: First process (PID 1) responsible for managing services and system startups.
 
 
 **Processes in Linux**
@@ -51,9 +51,11 @@ Examples:
 
 **5 commands used daily**
 
-ps -  View running processes
-top - Monitor system resources in real time
-systemctl - manages services
-df -h - check disk usage
-free -h - check memory usage
+| Command | Purpose |
+|---|---|
+| ps | View running processes |
+| top | Monitor system resources in real time |
+| systemctl | manages services |
+| df -h | check disk usage |
+| free -h | check memory usage |
 

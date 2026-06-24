@@ -5,7 +5,7 @@
 | ps aux | Displays all running processes |
 | top | Monitor processes in real time |
 | htop | interactive process monitoring tool |
-| kill -9 PID : Force terminate a process |
+| kill -9 PID | Force terminate a process |
 | killall proc\_name | Kill all processes by name |
 | pkill process\_name | Kill processes by name |
 | pgrep process\_name | FInd process ID by name |
@@ -58,7 +58,7 @@
 | w | Display who is online.|
 | whoami | Who you are logged in as.|
 | finger user | Display information about user.|
-| uname -a : Show Kernel information.|
+| uname -a | Show Kernel information.|
 | cat /proc/cpuinfo | Show CU information.|
 | cat /proc/meminfo | Show Memory information.|
 | free -h | Show memory usage.|

@@ -1,6 +1,6 @@
 ### Environment basics:
 
-**uname -a**
+- uname -a
 
 Linux ip-172-31-21-180 7.0.0-1004-aws #4-Ubuntu SMP PREEMPT Mon Apr 13 13:14:24 UTC 2026 x86\_64 GNU/Linux
 
@@ -15,7 +15,7 @@ Processor type: x86\_64
 Hardware platform: x86\_64
 Operating system: GNU/Linux
 
-**lsb\_release -a**
+- lsb\_release -a
 
 No LSB modules are available.
 Distributor ID: Ubuntu
@@ -25,7 +25,7 @@ Codename: resolute
 
 **Observation**: Linux distribution and version details
 
-**cat /etc/os-release**
+- cat /etc/os-release
 
 PRETTY\_NAME="Ubuntu 26.04 LTS"
 NAME="Ubuntu"

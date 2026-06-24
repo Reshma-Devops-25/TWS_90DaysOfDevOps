@@ -3,6 +3,10 @@
 **# Connect EC2 via SSH#**
 
 - ssh -i "Linux-Practice.pem" ubuntu@ec2-54-83-182-154.compute-1.amazonaws.com
+  
+
+<img width="1920" height="1032" alt="ssh-login" src="https://github.com/user-attachments/assets/a4ff4cb1-b1ca-4442-b74b-5842e7526171" />
+
 
 Connected securely to ubuntu EC2 instance using SSH.
 
@@ -22,7 +26,10 @@ Successfully installed nginx service.
 
 #### *Step 3:* Verify Nginx is running
 
-- systemctl status nginx
+- systemctl status nginx  
+
+  <img width="1669" height="951" alt="Nginx" src="https://github.com/user-attachments/assets/92763b77-c76d-479d-b62f-2f30578741bf" />
+
 
 Checked that nginx service is running successfully
 
@@ -56,6 +63,10 @@ Saved logs in nginx-logs.txt file
 #### *Step 3:* Download Log File to Your Local Machine
 
 - scp -i "Linux-Practice.pem" ubuntu@ec2-54-83-182-154.compute-1.amazonaws.com>~/nginx-logs.txt .
+
+
+   <img width="1317" height="901" alt="scp-log-local" src="https://github.com/user-attachments/assets/2ce0919b-0fc4-47ea-894e-3bc989dd3704" />
+
 
 Downloaded log file into my local machine successfully.
 

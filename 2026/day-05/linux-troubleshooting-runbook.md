@@ -1,5 +1,7 @@
-**Environment basics:**
+###Environment basics:###
+
 **uname -a**
+
 Linux ip-172-31-21-180 7.0.0-1004-aws #4-Ubuntu SMP PREEMPT Mon Apr 13 13:14:24 UTC 2026 x86\_64 GNU/Linux
 
 **Observation**: details of aws EC2 information
@@ -41,9 +43,9 @@ LOGO=ubuntu-logo
 
 **Observation** : Information about distribution ID, name, Version
 
-**Filesystem sanity:**
+###Filesystem sanity:###
 
-create a throwaway folder and file
+- create a throwaway folder and file
 
 mkdir /tmp/runbook-demo
 
@@ -53,7 +55,7 @@ mkdir /tmp/runbook-demo
 
 **Observation** : Having read and write permission for user and read only permission for grp and others, contents are copied fron /etc/hosts to /tmp/runbook-demo
 
-**CPU / Memory:**
+###CPU / Memory:###
 
 - ps -o pid,comm -> Display process id and command
 - ps -o pcpu -> Display CPU usage percentage for processes
@@ -61,15 +63,15 @@ mkdir /tmp/runbook-demo
 
 **Observation** : Can see clearly usage percentage of CPU, memory and PID for processes
 
-
-**free -h**
+- free -h
+  
 total        used        free      shared  buff/cache   available
 Mem:           951Mi       356Mi       212Mi       1.8Mi       514Mi       595Mi
 Swap:             0B          0B          0B
 
 **Observation** : Not consumed more memory.
 
-**Disk / IO:**
+###Disk / IO:###
 
 - df -h :  Displays disk space usage of mounted file systems in a human-readable format.
 
@@ -90,7 +92,7 @@ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st 
 
 **Observation**: Usage space actively free.
 
-**Network:**
+###Network:###
 - ss -tulpn
 tcp               LISTEN             0                  5                                         127.0.0.1:44321
 tcp               LISTEN             0                  5                                         127.0.0.1:4330
@@ -103,7 +105,7 @@ Server: nginx/1.28.3 (Ubuntu)
 
 **Obaservation**: Nginx is serving request successfullytail
 
-**Logs:**
+###Logs:###
 
 - journalctl -u nginx -n 5 -> Shows Status of ngix server for top 5 lines
 

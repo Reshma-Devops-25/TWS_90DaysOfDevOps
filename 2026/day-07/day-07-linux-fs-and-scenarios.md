@@ -86,8 +86,8 @@ I would use when: I need to locate installed command-line tools.
 
 I would use when: I need to to install external packages.
 
-
 # Find the largest log file in /var/log 
+
 du -sh /var/log/* 2>/dev/null | sort -h | tail -5
 
 0       /var/log/wtmp
@@ -99,236 +99,117 @@ du -sh /var/log/* 2>/dev/null | sort -h | tail -5
 - These are the top 5 heaviest consumers of disk space under /var/log.
 - 2>/dev/null is a common trick to hide unwanted error messages, especially in scripts or one-liners where you only care about successful output.
 
-Scenario: Check if a service is running
+# Scenario: Check if a service is running
 
-Question: How do you check if the 'nginx' service is running?
+# Question: How do you check if the 'nginx' service is running?
 
+**My Solution (Step by step):**
 
-My Solution (Step by step):
+# Step 1: Check service status
 
-Step 1: Check service status
+- systemctl status nginx
 
-systemctl status nginx
+**Why**: It shows if the service is active, failed, or stopped
 
-Why: It shows if the service is active, failed, or stopped
+# Step 2: View recent Nginx logs
 
-Step 2: View recent Nginx logs
+- journalctl -u nginx -n 20
 
-journalctl -u nginx -n 20
+**Why**: It displays recent logs and helps identify startup issues.
 
-Why: It displays recent logs and helps identify startup issues.
+# Step 3: Check if service is enabled on boot
 
-Step 3: Check if service is enabled on boot
+- systemctl is-enabled nginx
 
-systemctl is-enabled nginx
+**Why**: To know if nginx will start automatically after reboot.
 
-Why: To know if nginx will start automatically after reboot.
+# Step 4: Check if nginx is listening on port
 
-Step 4: Check if nginx is listening on port
+- sudo ss -tulpn | grep nginx
 
-sudo ss -tulpn | grep nginx
+**Why**: It confirms that Nginx is running and accepting connections.
 
-Why: It confirms that Nginx is running and accepting connections.
+**What I learned**: Always check status first, then review logs and verify that service is listening on the expected port.
 
-What I learned: Always check status first, then review logs and verify that service is listening on the expected port.
-
-Scenario 2: High CPU Usage
+# Scenario 2: High CPU Usage
 
 Application server is running very slow and CPU utilization is very high.
 
-Step 1:
+# Step 1:
 
 top 
 
-why: Monitor live CPU and memory usage.
+**why**: Monitor live CPU and memory usage.
 
-Step 2:
+# Step 2:
 
 ps aux --sort=%cpu | head -10
 
-Why: Identify top 10 processes consuming highest CPU and memory resources.
+**Why**: Identify top 10 processes consuming highest CPU and memory resources.
 
-Step 3:
+# Step 3:
 
 pidof nginx
 
-why: Find process ID of specific application.
+**why**: Find process ID of specific application.
 
-Step 4:
+# Step 4:
 
 top -p <PID>
 
-Why: Monitor resource consumption of specific process.
+**Why**: Monitor resource consumption of specific process.
 
-What I learned: CPU bottlenecks can often be identified by checking top resource-consuming processes.
+**What I learned**: CPU bottlenecks can often be identified by checking top resource-consuming processes.
 
-Scenario 3: Finding Service Logs
+# Scenario 3: Finding Service Logs
 
 Developer wants to check docker service logs
 
-Step 1:
+# Step 1:
 
 systemctl status docker
 
-Why: To check docker service is running correctly.
+**Why**: To check docker service is running correctly.
 
-Step 2:
+# Step 2:
 
 journalctl -u docker -n 50
 
-Why: To view the latest docker service logs to identify warnings and errors.
+**Why**: To view the latest docker service logs to identify warnings and errors.
 
-Step 3:
+# Step 3:
 
 journalctl -u docker -f
 
-Why: Monitor docker logs in real time while troubleshooting issues.
+**Why**: Monitor docker logs in real time while troubleshooting issues.
 
-What i learned: Systemd-managed services logs are stored in journal and can be accessed using journalctl command. Container specific logs can be viewed using the docker log command.
+**What i learned**: Systemd-managed services logs are stored in journal and can be accessed using journalctl command. Container specific logs can be viewed using the docker log command.
 
-Scenario 4: File Permissions Issue
+# Scenario 4: File Permissions Issue
 
 A script named backup.sh shows permission denied when executed
 
-Step 1:
+# Step 1:
 
 ls -l backup.sh
 
-Why: To check current permissions assigned to the script.
+**Why**: To check current permissions assigned to the script.
 
-Step 2:
+# Step 2:
 
 chmod +x backup.sh
 
-Why: To add/grant execute permission so that the script can be run.
+**Why**: To add/grant execute permission so that the script can be run.
 
-Step 3:
+# Step 3:
 
 ls -l backup.sh
 
-Why: To verify that execute permission has been granted to script successfully.
+**Why**: To verify that execute permission has been granted to script successfully.
 
-Step 4:
+# Step 4:
 
 ./backup.sh
 
-Why: Execute the script after granting permission. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+**Why**: Execute the script after granting permission. 
 

@@ -1,4 +1,4 @@
-###Environment basics:
+### Environment basics:
 
 **uname -a**
 
@@ -43,7 +43,7 @@ LOGO=ubuntu-logo
 
 **Observation** : Information about distribution ID, name, Version
 
-###Filesystem sanity:
+### Filesystem sanity:
 
 - create a throwaway folder and file
 
@@ -55,7 +55,7 @@ mkdir /tmp/runbook-demo
 
 **Observation** : Having read and write permission for user and read only permission for grp and others, contents are copied fron /etc/hosts to /tmp/runbook-demo
 
-###CPU / Memory:###
+### CPU / Memory:###
 
 - ps -o pid,comm -> Display process id and command
 - ps -o pcpu -> Display CPU usage percentage for processes
@@ -71,7 +71,7 @@ Swap:             0B          0B          0B
 
 **Observation** : Not consumed more memory.
 
-###Disk / IO:
+### Disk / IO:
 
 - df -h :  Displays disk space usage of mounted file systems in a human-readable format.
 
@@ -105,7 +105,7 @@ Server: nginx/1.28.3 (Ubuntu)
 
 **Obaservation**: Nginx is serving request successfullytail
 
-###Logs:
+### Logs:
 
 - journalctl -u nginx -n 5 -> Shows Status of ngix server for top 5 lines
 

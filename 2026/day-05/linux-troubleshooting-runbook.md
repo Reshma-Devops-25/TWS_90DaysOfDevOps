@@ -80,7 +80,7 @@ Filesystem      Size  Used Avail Use% Mounted on
 
 **Observation**: Root filesysten has used 36% memory
 
-**du -sh**  
+- du -sh
 52K 
 **Observation** : exact disk space usage.
 
@@ -92,14 +92,15 @@ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st 
 
 **Observation**: Usage space actively free.
 
-###Network:
+### Network:
 - ss -tulpn
 tcp               LISTEN             0                  5                                         127.0.0.1:44321
 tcp               LISTEN             0                  5                                         127.0.0.1:4330
 
 **Observation**: State of process along with IP address and port
 
-**curl -I localhost**
+- curl -I localhost
+  
 HTTP/1.1 200 OK
 Server: nginx/1.28.3 (Ubuntu)
 

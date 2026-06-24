@@ -1,4 +1,4 @@
-###Environment basics:###
+###Environment basics:
 
 **uname -a**
 
@@ -43,7 +43,7 @@ LOGO=ubuntu-logo
 
 **Observation** : Information about distribution ID, name, Version
 
-###Filesystem sanity:###
+###Filesystem sanity:
 
 - create a throwaway folder and file
 
@@ -71,7 +71,7 @@ Swap:             0B          0B          0B
 
 **Observation** : Not consumed more memory.
 
-###Disk / IO:###
+###Disk / IO:
 
 - df -h :  Displays disk space usage of mounted file systems in a human-readable format.
 
@@ -92,7 +92,7 @@ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st 
 
 **Observation**: Usage space actively free.
 
-###Network:###
+###Network:
 - ss -tulpn
 tcp               LISTEN             0                  5                                         127.0.0.1:44321
 tcp               LISTEN             0                  5                                         127.0.0.1:4330
@@ -105,7 +105,7 @@ Server: nginx/1.28.3 (Ubuntu)
 
 **Obaservation**: Nginx is serving request successfullytail
 
-###Logs:###
+###Logs:
 
 - journalctl -u nginx -n 5 -> Shows Status of ngix server for top 5 lines
 

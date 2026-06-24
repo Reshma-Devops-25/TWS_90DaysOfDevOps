@@ -99,9 +99,9 @@ du -sh /var/log/* 2>/dev/null | sort -h | tail -5
 - These are the top 5 heaviest consumers of disk space under /var/log.
 - 2>/dev/null is a common trick to hide unwanted error messages, especially in scripts or one-liners where you only care about successful output.
 
-# Scenario: Check if a service is running
+### Scenario: Check if a service is running
 
-# Question: How do you check if the 'nginx' service is running?
+### Question: How do you check if the 'nginx' service is running?
 
 **My Solution (Step by step):**
 

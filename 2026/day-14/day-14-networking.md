@@ -62,7 +62,49 @@ Hands-on Checklist
 
 <img width="760" height="250" alt="connection_listening" src="https://github.com/user-attachments/assets/ce12e74c-2096-418f-83d2-52f7bf94f7b1" />
 
+### Mini Task: Port Probe & Interpret
+1) Identify one listening port from `ss -tulpn`
 
+<img width="1826" height="361" alt="listening_port" src="https://github.com/user-attachments/assets/6f3f8b29-bc12-4286-a52f-66d2ecf2bd3d" />
 
+2) From the same machine, test it: `nc -zv localhost 22` or `curl -I http://localhost:22` 
 
+<img width="647" height="84" alt="port_22_success" src="https://github.com/user-attachments/assets/9c47b236-e534-495c-8aef-5f7c862a5d31" />
+
+- If not reachable: Next steps would be checking service status (systemctl status ssh) or firewall rules. I can also use nslookup google.com to get a non-authoritative answer.
+
+  ## Reflection 
+- Which command gives you the fastest signal when something is broken? ```ping```
+
+- What layer (OSI/TCP-IP) would you inspect next if DNS fails? If HTTP 500 shows up?
+
+- **If DNS Fails**
+   - OSI: Layer 7 (Application) and TCP-IP: Application layer
+
+  - Reason:
+    - DNS stays in an application-layer protocol
+    - Common issues include resolver misconfiguration,DNS service failure,or invalid records
+    - If unresolved,move to:`Transport layer`
+
+- **If HTTP 500 Shows Up**
+  - OSI: Layer 7 (Application) and TCP-IP: Application layer
+
+  - Reason:
+    - TCP connection succeeded
+    - Request reached the server
+    - HTTP 500 indicates a server-side,application error,not a network issue
+
+**Two follow-up checks you’d run in a real incident:**
+
+1. DNS Troubleshooting
+```bash
+cat /etc/resolv.conf
+dig google.com
+```
+
+2. HTTP 500 Troubleshooting
+```bash
+tail -f application.log
+systemctl status <web-service>
+```
 

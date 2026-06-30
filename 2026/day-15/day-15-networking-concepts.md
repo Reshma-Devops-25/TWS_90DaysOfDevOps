@@ -60,11 +60,11 @@ Structure Example `192.168.1.10`
 
 ## Task 3: CIDR & Subnetting
 
-### 1. What does `/24` mean in `192.168.1.0/24`?
+1. What does `/24` mean in `192.168.1.0/24`?
 - CIDR notation specifies **network bits**.  
 - `/24` → 24 bits for network, 8 bits for host.
 - The `/24` means the first three numbers (`192.168.1.`) are fixed for the network, leaving the last number free for up to 254 individual devices.
-### 2. How many usable hosts in a `/24`? A `/16`? A `/28`?
+2. How many usable hosts in a `/24`? A `/16`? A `/28`?
 Formula: `Usable Hosts = 2^(32 - CIDR) - 2`  
 Higher CIDR number = Fewer IP's
 Lower CIDR number = More IP's
@@ -72,6 +72,62 @@ Lower CIDR number = More IP's
    - `/24`: **254** usable hosts (2⁸ - 2).
    - `/16`: **65,534** usable hosts (2¹⁶ - 2).
    - `/28`: **14** usable hosts (2⁴ - 2).
+3. Why Subnet?
+- To divide large network into smaller, secure chunks to stop traffic, boost speed and manageable networks.
 
+4. Quick Reference Table
+
+| CIDR | Subnet Mask | Total IPs | Usable Hosts |
+|------|-------------|-----------|--------------|
+| /24  | 255.255.255.0   | 254   | 254          |
+| /16  | 255.255.0.0     | 65534 | 65534        |
+| /28  | 255.255.255.254 | 14    | 14           |
+
+### Task 4: Ports – The Doors to Services
+1. What is a port? Why do we need them?
+- **Port:** a virtual, software-based endpoint that directs specific network traffic to the correct application or service on your device.
+A port is a logical identifier used to distinguish different applications or services on a device, allowing network traffic to reach the correct program.
+
+- **Service Identification:** Multiple applications running on the same device are distinguished using port numbers. For example, HTTP (port 80) and SMTP (port 25) can operate simultaneously on a single computer because each service listens on a different port, ensuring data reaches the correct service.
+- **Efficient Data Routing:** When a device receives data from the network, port numbers help the operating system direct incoming packets to the appropriate application efficiently.
+- **Traffic Control and Security:** Firewalls use port numbers to allow or block traffic for specific applications or services. Blocking traffic to certain ports helps prevent access to services that may pose security risks.
+- **Service Scalability:** Port numbers enable a single device to support many services at the same time. By assigning different ports to different services, the system can scale and handle multiple network applications concurrently.
+
+2. Common ports:
+
+| Port | Service |
+|------|---------|
+| 22   | SSH     |
+| 80   | HTTP    |
+| 443  | HTTPS   |
+| 53   | DNS     |
+| 3306 | MySQL   |
+| 6379 | Redis   |
+| 27017| MongoDB |
   
+3. Run `ss -tulpn` — match at least 2 listening ports to their services
+    - `22`:- SSH
+    - `53`:- DNS
+
+### Task 5: Putting It Together
+
+### 1. `curl http://myapp.com:8080` – networking concepts involved
+- Your terminal translates `myapp.com` to an IP address and sends an unencrypted HTTP GET request directly to port **8080** instead of the standard web port.
+- **DNS**: Resolve `myapp.com` → IP  
+- **TCP**: Reliable transport layer  
+- **HTTP**: Application protocol  
+- **Port 8080**: Directs request to specific service  
+
+### 2. App can't reach a database at `10.0.1.50:3306` — what would you check first?
+  - **Network Line Check**: Run `ping 10.0.1.50` to see if the database server machine is online and reachable from your app server.
+  - **Port Connectivity**: Run `nc -zv 10.0.1.50 3306` (or `telnet 10.0.1.50 3306`) to check if firewalls, security groups, or ACLs are blocking traffic on port 3306
+  - **Database Listening Config**: Verify that the MySQL/MariaDB service is actually running on the target server and its bind-address configuration is set to `0.0.0.0` or `10.0.1.50` rather than just `127.0.0.1`.
+
+### What I learned
+
+1. **DNS Resolution is the Backbone of the Internet** – Domain names like google.com are translated into IP addresses through a hierarchy of caches, root/TLD, and authoritative servers, enabling browsers to connect to the right server.
+
+2. **IP Addressing & Subnetting Organize Networks** – Understanding public vs private IPs, CIDR notation, and subnet masks helps manage networks efficiently and calculate usable hosts.
+
+3. **Ports Direct Traffic to the Right Service** – Ports act as “doors” for applications; combined with IPs and protocols like TCP/HTTP, they ensure data reaches the correct service (e.g., web, database, email).
 

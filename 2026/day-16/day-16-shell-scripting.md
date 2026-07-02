@@ -49,3 +49,14 @@ What happens if you remove the shebang line?
 
 
 <img width="562" height="274" alt="greet_sh" src="https://github.com/user-attachments/assets/60f75401-c039-4964-b13d-111556a05078" />
+
+### Task 4: If-Else Conditions
+1. Create `check_number.sh` that:
+   - Takes a number using `read`
+   - Prints whether it is **positive**, **negative**, or **zero**
+  
+   <img width="567" height="229" alt="if_else" src="https://github.com/user-attachments/assets/6106adeb-e0bf-4eb3-89b0-879044f0741f" />
+
+   <img width="482" height="272" alt="check_number_sh" src="https://github.com/user-attachments/assets/03dacdff-8bcf-4e35-92fb-bd9ee843d8e1" />
+
+

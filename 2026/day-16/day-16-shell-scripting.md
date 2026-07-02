@@ -54,9 +54,41 @@ What happens if you remove the shebang line?
 1. Create `check_number.sh` that:
    - Takes a number using `read`
    - Prints whether it is **positive**, **negative**, or **zero**
+
+<img width="567" height="229" alt="if_else" src="https://github.com/user-attachments/assets/6106adeb-e0bf-4eb3-89b0-879044f0741f" />
+
+<img width="482" height="272" alt="check_number_sh" src="https://github.com/user-attachments/assets/03dacdff-8bcf-4e35-92fb-bd9ee843d8e1" />
+
+2. Create `file_check.sh` that:
+   - Asks for a filename
+   - Checks if the file **exists** using `-f`
+   - Prints appropriate message
   
-   <img width="567" height="229" alt="if_else" src="https://github.com/user-attachments/assets/6106adeb-e0bf-4eb3-89b0-879044f0741f" />
+<img width="525" height="227" alt="file_check" src="https://github.com/user-attachments/assets/290dce1c-cfa7-4b7f-b704-332e34547e02" />
 
-   <img width="482" height="272" alt="check_number_sh" src="https://github.com/user-attachments/assets/03dacdff-8bcf-4e35-92fb-bd9ee843d8e1" />
+<img width="556" height="222" alt="file_check_sh" src="https://github.com/user-attachments/assets/ef8809b8-4071-40c8-a49c-304ddf119b9f" />
 
+### Task 5: Combine It All
+Create `server_check.sh` that:
+1. Stores a service name in a variable (e.g., `nginx`, `sshd`)
+2. Asks the user: "Do you want to check the status? (y/n)"
+3. If `y` — runs `systemctl status <service>` and prints whether it's **active** or **not**
+4. If `n` — prints "Skipped."
+
+<img width="552" height="305" alt="service_chek" src="https://github.com/user-attachments/assets/348f53cb-3238-4eff-95f8-227075c064b4" />
+
+<img width="560" height="318" alt="service_chek_sh" src="https://github.com/user-attachments/assets/c2aa748a-a2c8-4154-b222-10aeb4e710c1" />
+
+
+## What I learned -
+
+
+* How to write and execute Bash shell scripts using the shebang (`#!/bin/bash`), If `#!/bin/bash` is not added to the top of the shell script, the shell script picks the system's default shell (often sh/Dash), which may break Bash-specific features.
+* How to define variables in shell script, When defining a variables there shouldn't be any spaces i.e. `NAME="Reshma"`. 
+* How to read user input with `read -p`.
+* How variable assignment works in Bash,including accessing variables with `$` and understanding single vs double quotes. Double quotes should be used instead of single quotes for echo command to run the variables within the message.
+* How to control script flow using conditional statements (`if`, `elif`, `else`) and test operators (`-f`, `-gt`, `-lt`).While using `if` command, we should use `[]` brackets with proper spaces i.e. `if[ condition ]; then` and `if` command should end with `fi`.
+* How to check file existence and numeric conditions inside shell scripts.
+* How to use `systemctl is-active` to programmatically check whether a service is running instead of relying on verbose status output.
+* We can automate shell commands inside the shell script,by make file executable using `chmod +x hello.sh` and running it with `./hello.sh`.
 

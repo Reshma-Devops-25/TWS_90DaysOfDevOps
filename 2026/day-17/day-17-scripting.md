@@ -49,6 +49,45 @@
 
 <img width="790" height="331" alt="arguments" src="https://github.com/user-attachments/assets/37ff8f7c-284c-46cf-8811-1fc97198f138" />
 
+### Task 4: Install Packages via Script
+1. Create `install_packages.sh` that:
+   - Defines a list of packages: `nginx`, `curl`, `wget`
+   - Loops through the list
+   - Checks if each package is installed (use `dpkg -s` or `rpm -q`)
+   - Installs it if missing, skips if already present
+   - Prints status for each package
+
+
+<img width="696" height="427" alt="install_pakage_sh" src="https://github.com/user-attachments/assets/2677e9c1-59d8-416b-b426-c87c045de9e3" />
+
+
+<img width="560" height="148" alt="install_pakage" src="https://github.com/user-attachments/assets/6c157d8a-4ea8-4c89-9cfa-c24d554a6592" />
+
+### Task 5: Error Handling
+1. Create `safe_script.sh` that:
+   - Uses `set -e` at the top (exit on error)
+   - Tries to create a directory `/tmp/devops-test`
+   - Tries to navigate into it
+   - Creates a file inside
+   - Uses `||` operator to print an error if any step fails
+
+<img width="532" height="250" alt="safe_script_sh" src="https://github.com/user-attachments/assets/3b1461be-2a2b-4460-b9cd-56c197ed4761" />
+
+
+
+<img width="1105" height="357" alt="safe_script" src="https://github.com/user-attachments/assets/6d9b5017-9fbc-4f1a-9625-69903b7c9687" />
+
+
+2. Modify your `install_packages.sh` to check if the script is being run as root — exit with a message if not.
+
+<img width="669" height="588" alt="modified_install_package_sh" src="https://github.com/user-attachments/assets/ab59125c-39e6-455d-a593-1e6bb7779d6c" />
+
+
+<img width="706" height="362" alt="modified_install_package" src="https://github.com/user-attachments/assets/47dd6901-a21d-40ba-8d77-a08b9329b198" />
+
+
+
+
 
 
 
